@@ -21,7 +21,7 @@ my_auth = requests_oauthlib.OAuth1(CONSUMER_KEY, CONSUMER_SECRET,ACCESS_TOKEN, A
 
 def get_tweets():
     url = 'https://stream.twitter.com/1.1/statuses/filter.json'
-    # Essa é a localização de São Francisco
+    # Essa é a localização de São Francisco  
     query_data = [('locations', '-122.75,36.8,-121.75,37.8,-74,40,-73,41'), ('track', '#')]
     query_url = url + '?' + '&'.join([str(t[0]) + '=' + str(t[1]) for t in query_data])
     response = requests.get(query_url, auth=my_auth, stream=True)
